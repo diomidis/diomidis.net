@@ -1,0 +1,3 @@
+User-agent: *
+
+sitemap: https://diomidis.net/sitemap-index.xml
