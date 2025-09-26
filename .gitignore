@@ -63,3 +63,4 @@ yarn.lock
 !starters/*/package-lock.json
 
 .parcel-cache
+.env
