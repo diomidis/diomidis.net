@@ -1,4 +1,3 @@
-import React from 'react'
 import './App.css'
 import { useDarkMode } from './hooks/useDarkMode'
 import { DarkModeToggle } from './components/DarkModeToggle'
