@@ -1,1 +1,129 @@
 @import "tailwindcss";
+
+/* CSS Variables for theming */
+:root {
+  /* Light mode colors */
+  --color-bg-primary: 249 250 251; /* gray-50 */
+  --color-bg-secondary: 255 255 255; /* white */
+  --color-bg-tertiary: 243 244 246; /* gray-100 */
+  
+  --color-text-primary: 17 24 39; /* gray-900 */
+  --color-text-secondary: 75 85 99; /* gray-600 */
+  --color-text-muted: 107 114 128; /* gray-500 */
+  
+  --color-border: 209 213 219; /* gray-300 */
+  --color-border-light: 229 231 235; /* gray-200 */
+  
+  --color-accent: 37 99 235; /* blue-600 */
+  --color-accent-hover: 29 78 216; /* blue-700 */
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.dark {
+  /* Dark mode colors */
+  --color-bg-primary: 17 24 39; /* gray-900 */
+  --color-bg-secondary: 31 41 55; /* gray-800 */
+  --color-bg-tertiary: 55 65 81; /* gray-700 */
+  
+  --color-text-primary: 249 250 251; /* gray-50 */
+  --color-text-secondary: 209 213 219; /* gray-300 */
+  --color-text-muted: 156 163 175; /* gray-400 */
+  
+  --color-border: 75 85 99; /* gray-600 */
+  --color-border-light: 55 65 81; /* gray-700 */
+  
+  --color-accent: 59 130 246; /* blue-500 */
+  --color-accent-hover: 37 99 235; /* blue-600 */
+  
+  /* Shadows for dark mode */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+}
+
+/* Global styles with smooth transitions */
+* {
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Custom utility classes using CSS variables */
+.bg-primary {
+  background-color: rgb(var(--color-bg-primary));
+}
+
+.bg-secondary {
+  background-color: rgb(var(--color-bg-secondary));
+}
+
+.bg-tertiary {
+  background-color: rgb(var(--color-bg-tertiary));
+}
+
+.text-primary {
+  color: rgb(var(--color-text-primary));
+}
+
+.text-secondary {
+  color: rgb(var(--color-text-secondary));
+}
+
+.text-muted {
+  color: rgb(var(--color-text-muted));
+}
+
+.border-primary {
+  border-color: rgb(var(--color-border));
+}
+
+.border-light {
+  border-color: rgb(var(--color-border-light));
+}
+
+.text-accent {
+  color: rgb(var(--color-accent));
+}
+
+.text-accent:hover {
+  color: rgb(var(--color-accent-hover));
+}
+
+.shadow-custom-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-custom-md {
+  box-shadow: var(--shadow-md);
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Ensure proper focus visibility in both modes */
+.focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+/* Smooth color transitions for all interactive elements */
+a, button, input, textarea, select {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Ensure proper contrast for focus states */
+:focus-visible {
+  outline: 2px solid rgb(var(--color-accent));
+  outline-offset: 2px;
+}
