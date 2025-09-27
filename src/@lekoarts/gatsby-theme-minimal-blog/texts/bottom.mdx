@@ -1,2 +1,201 @@
-<Title text="Projects" />
+<Title text="Skills & Technologies" />
 
+<div sx={{ display: `grid`, gridTemplateColumns: [`1fr`, `1fr 1fr`], gap: 4, mb: 5 }}>
+  <div>
+    <Text sx={{ fontSize: 2, fontWeight: `bold`, mb: 2, color: `heading` }}>Backend</Text>
+    <Text sx={{ fontSize: 1, color: `text`, lineHeight: 1.6 }}>
+      Node.js, Python, Java, Go<br/>
+      Express, FastAPI, Spring Boot<br/>
+      PostgreSQL, MongoDB, Redis
+    </Text>
+  </div>
+  <div>
+    <Text sx={{ fontSize: 2, fontWeight: `bold`, mb: 2, color: `heading` }}>Infrastructure</Text>
+    <Text sx={{ fontSize: 1, color: `text`, lineHeight: 1.6 }}>
+      AWS, Docker, Kubernetes<br/>
+      CI/CD, Terraform<br/>
+      Microservices, Event-driven architecture
+    </Text>
+  </div>
+</div>
+
+<Title text="Featured Projects" />
+
+<div sx={{ display: `grid`, gap: 4, mb: 5 }}>
+  <div sx={{ 
+    border: `1px solid`, 
+    borderColor: `divide`, 
+    borderRadius: `default`, 
+    p: 4,
+    transition: `all 0.2s ease-in-out`,
+    '&:hover': {
+      borderColor: `primary`,
+      transform: `translateY(-2px)`,
+      boxShadow: `0 4px 12px rgba(0,0,0,0.1)`
+    }
+  }}>
+    <Text sx={{ fontSize: 2, fontWeight: `bold`, mb: 2, color: `heading` }}>
+      Distributed Task Queue
+    </Text>
+    <Text sx={{ fontSize: 1, color: `text`, lineHeight: 1.6, mb: 3 }}>
+      A high-performance distributed task queue system built with Node.js and Redis. 
+      Handles millions of jobs per day with automatic retry logic and monitoring.
+    </Text>
+    <div sx={{ display: `flex`, gap: 2, flexWrap: `wrap` }}>
+      <span sx={{ 
+        fontSize: 0, 
+        bg: `muted`, 
+        color: `text`, 
+        px: 2, 
+        py: 1, 
+        borderRadius: `default` 
+      }}>Node.js</span>
+      <span sx={{ 
+        fontSize: 0, 
+        bg: `muted`, 
+        color: `text`, 
+        px: 2, 
+        py: 1, 
+        borderRadius: `default` 
+      }}>Redis</span>
+      <span sx={{ 
+        fontSize: 0, 
+        bg: `muted`, 
+        color: `text`, 
+        px: 2, 
+        py: 1, 
+        borderRadius: `default` 
+      }}>Docker</span>
+    </div>
+  </div>
+
+  <div sx={{ 
+    border: `1px solid`, 
+    borderColor: `divide`, 
+    borderRadius: `default`, 
+    p: 4,
+    transition: `all 0.2s ease-in-out`,
+    '&:hover': {
+      borderColor: `primary`,
+      transform: `translateY(-2px)`,
+      boxShadow: `0 4px 12px rgba(0,0,0,0.1)`
+    }
+  }}>
+    <Text sx={{ fontSize: 2, fontWeight: `bold`, mb: 2, color: `heading` }}>
+      API Gateway Service
+    </Text>
+    <Text sx={{ fontSize: 1, color: `text`, lineHeight: 1.6, mb: 3 }}>
+      Microservices API gateway with authentication, rate limiting, and request routing. 
+      Built with Go for maximum performance and deployed on Kubernetes.
+    </Text>
+    <div sx={{ display: `flex`, gap: 2, flexWrap: `wrap` }}>
+      <span sx={{ 
+        fontSize: 0, 
+        bg: `muted`, 
+        color: `text`, 
+        px: 2, 
+        py: 1, 
+        borderRadius: `default` 
+      }}>Go</span>
+      <span sx={{ 
+        fontSize: 0, 
+        bg: `muted`, 
+        color: `text`, 
+        px: 2, 
+        py: 1, 
+        borderRadius: `default` 
+      }}>Kubernetes</span>
+      <span sx={{ 
+        fontSize: 0, 
+        bg: `muted`, 
+        color: `text`, 
+        px: 2, 
+        py: 1, 
+        borderRadius: `default` 
+      }}>PostgreSQL</span>
+    </div>
+  </div>
+
+  <div sx={{ 
+    border: `1px solid`, 
+    borderColor: `divide`, 
+    borderRadius: `default`, 
+    p: 4,
+    transition: `all 0.2s ease-in-out`,
+    '&:hover': {
+      borderColor: `primary`,
+      transform: `translateY(-2px)`,
+      boxShadow: `0 4px 12px rgba(0,0,0,0.1)`
+    }
+  }}>
+    <Text sx={{ fontSize: 2, fontWeight: `bold`, mb: 2, color: `heading` }}>
+      Real-time Analytics Platform
+    </Text>
+    <Text sx={{ fontSize: 1, color: `text`, lineHeight: 1.6, mb: 3 }}>
+      Event streaming platform for real-time data processing and analytics. 
+      Processes terabytes of data daily with sub-second latency.
+    </Text>
+    <div sx={{ display: `flex`, gap: 2, flexWrap: `wrap` }}>
+      <span sx={{ 
+        fontSize: 0, 
+        bg: `muted`, 
+        color: `text`, 
+        px: 2, 
+        py: 1, 
+        borderRadius: `default` 
+      }}>Python</span>
+      <span sx={{ 
+        fontSize: 0, 
+        bg: `muted`, 
+        color: `text`, 
+        px: 2, 
+        py: 1, 
+        borderRadius: `default` 
+      }}>Apache Kafka</span>
+      <span sx={{ 
+        fontSize: 0, 
+        bg: `muted`, 
+        color: `text`, 
+        px: 2, 
+        py: 1, 
+        borderRadius: `default` 
+      }}>AWS</span>
+    </div>
+  </div>
+</div>
+
+<Title text="Get In Touch" />
+
+<Text sx={{ fontSize: [1, 2], color: `text`, lineHeight: 1.6, mb: 4 }}>
+I'm always interested in hearing about new opportunities and interesting projects. 
+Feel free to reach out if you'd like to collaborate or just want to say hello.
+</Text>
+
+<div sx={{ display: `flex`, gap: 3, flexWrap: `wrap` }}>
+  <a 
+    href="https://linkedin.com/in/diomidis-anadiotis" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    sx={{ 
+      color: `primary`, 
+      textDecoration: `none`,
+      fontSize: 1,
+      '&:hover': { textDecoration: `underline` }
+    }}
+  >
+    LinkedIn →
+  </a>
+  <a 
+    href="https://github.com/diomidis/cv/blob/a132da5932c0c4a84df85af665e73edf90571a39/cv_1023.pdf" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    sx={{ 
+      color: `primary`, 
+      textDecoration: `none`,
+      fontSize: 1,
+      '&:hover': { textDecoration: `underline` }
+    }}
+  >
+    Resume →
+  </a>
+</div>

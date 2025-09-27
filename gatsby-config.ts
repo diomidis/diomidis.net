@@ -8,11 +8,11 @@ const config: GatsbyConfig = {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/gatsby-config.mjs
-    siteTitle: `diomidis.net`,
+    siteTitle: `Diomidis Anadiotis`,
     siteTitleAlt: `diomidis.net`,
-    siteHeadline: `diomidis.net`,
+    siteHeadline: `Diomidis Anadiotis - Backend Software Engineer`,
     siteUrl: `http://diomidis.net`,
-    siteDescription: `Personal website and blog of Diomidis Anadiotis`,
+    siteDescription: `Backend software engineer passionate about building scalable systems and elegant solutions`,
     siteImage: `/banner.jpg`,
     siteLanguage: `en`,
     author: `@diomidis`,
