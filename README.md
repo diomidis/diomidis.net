@@ -1,6 +1,4 @@
-# Diomidis Anadiotis - Portfolio
-
-A clean, minimal portfolio website built with React and Vite.
+[![Deployed to diomidis.net](https://github.com/diomidis/diomidis.net/actions/workflows/deploy.yml/badge.svg)](https://github.com/diomidis/diomidis.net/actions/workflows/deploy.yml)
 
 ## Development
 
