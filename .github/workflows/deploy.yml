@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -52,20 +52,19 @@ jobs:
             exit 1
           fi
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: "18"
+          node-version: "22"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4
-        with:
-          # Automatically inject base path in your Vite configuration file.
-          static_site_generator: vite
+        uses: actions/configure-pages@v5
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Vite
-        run: ${{ steps.detect-package-manager.outputs.manager }} run build
+        env:
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: ${{ steps.detect-package-manager.outputs.manager }} run build -- --base="$BASE_PATH"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -82,3 +81,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
