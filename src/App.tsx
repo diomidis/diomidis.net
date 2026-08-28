@@ -41,6 +41,14 @@ function App() {
               GitHub
             </a>
             <a 
+              href="https://books.diomidis.net/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent font-medium hover:underline transition-all duration-200"
+            >
+              Library
+            </a>
+            <a 
               href="mailto:info@diomidis.net"
               className="text-accent hover:text-accent font-medium hover:underline transition-all duration-200"
             >
