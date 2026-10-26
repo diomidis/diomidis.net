@@ -1,6 +1,11 @@
 import "./App.css";
 import { useDarkMode } from "./hooks/useDarkMode";
 import { DarkModeToggle } from "./components/DarkModeToggle";
+import { ExternalLink } from "./components/ExternalLink";
+
+// Vertical padding grows the touch target to 44px; the matching negative margin keeps the layout unchanged
+const navLinkClass =
+  "py-2.5 -my-2.5 text-accent font-medium hover:underline underline-offset-4 transition-colors duration-200";
 
 function App() {
   const { isDark, toggle } = useDarkMode();
@@ -13,49 +18,38 @@ function App() {
           <div className="flex justify-end mb-6">
             <DarkModeToggle isDark={isDark} onToggle={toggle} />
           </div>
-          <h1 className="text-4xl font-bold text-primary mb-3">
+          <h1 className="text-4xl font-bold tracking-tight text-primary mb-3">
             Diomidis Anadiotis
           </h1>
           <p className="text-xl text-secondary mb-8">
             Senior Software Engineer
           </p>
           <nav className="flex justify-center gap-8 flex-wrap">
-            <a
+            <ExternalLink
               href="https://blog.diomidis.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:text-accent font-medium hover:underline transition-all duration-200"
+              className={navLinkClass}
             >
               Notes
-            </a>
-            <a
+            </ExternalLink>
+            <ExternalLink
               href="https://linkedin.com/in/diomidis-anadiotis"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:text-accent font-medium hover:underline transition-all duration-200"
+              className={navLinkClass}
             >
               LinkedIn
-            </a>
-            <a
+            </ExternalLink>
+            <ExternalLink
               href="https://github.com/diomidis"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:text-accent font-medium hover:underline transition-all duration-200"
+              className={navLinkClass}
             >
               GitHub
-            </a>
-            <a
+            </ExternalLink>
+            <ExternalLink
               href="https://books.diomidis.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:text-accent font-medium hover:underline transition-all duration-200"
+              className={navLinkClass}
             >
               Library
-            </a>
-            <a
-              href="mailto:info@diomidis.net"
-              className="text-accent hover:text-accent font-medium hover:underline transition-all duration-200"
-            >
+            </ExternalLink>
+            <a href="mailto:info@diomidis.net" className={navLinkClass}>
               Email
             </a>
           </nav>
@@ -65,7 +59,7 @@ function App() {
         <main className="space-y-16">
           {/* About */}
           <section>
-            <div className="prose prose-lg max-w-none text-secondary leading-relaxed space-y-4">
+            <div className="max-w-measure text-lg text-secondary leading-relaxed space-y-4">
               <p>
                 Customer-focused software engineer with proven expertise in
                 technical initiatives to deliver robust, scalable and
@@ -96,38 +90,38 @@ function App() {
               Technical Expertise
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-secondary p-6 rounded-lg shadow-custom-sm border border-light hover:shadow-custom-md transition-all duration-200">
+              <div className="bg-secondary p-6 rounded-lg shadow-custom-sm border border-light">
                 <h3 className="font-semibold text-primary mb-3 text-lg">
                   Backend & Architecture
                 </h3>
-                <p className="text-secondary text-sm leading-relaxed">
+                <p className="text-secondary leading-relaxed">
                   C#, .NET Core, CQRS with MediatR, Event-Driven Microservices,
                   Domain-Driven Design, Event Sourcing, RESTful APIs, GraphQL
                 </p>
               </div>
-              <div className="bg-secondary p-6 rounded-lg shadow-custom-sm border border-light hover:shadow-custom-md transition-all duration-200">
+              <div className="bg-secondary p-6 rounded-lg shadow-custom-sm border border-light">
                 <h3 className="font-semibold text-primary mb-3 text-lg">
                   Cloud & Infrastructure
                 </h3>
-                <p className="text-secondary text-sm leading-relaxed">
+                <p className="text-secondary leading-relaxed">
                   Azure Services, Docker, Kubernetes, CI/CD Pipelines,
                   Terraform, Application Insights, DevOps
                 </p>
               </div>
-              <div className="bg-secondary p-6 rounded-lg shadow-custom-sm border border-light hover:shadow-custom-md transition-all duration-200">
+              <div className="bg-secondary p-6 rounded-lg shadow-custom-sm border border-light">
                 <h3 className="font-semibold text-primary mb-3 text-lg">
                   Data & Messaging
                 </h3>
-                <p className="text-secondary text-sm leading-relaxed">
+                <p className="text-secondary leading-relaxed">
                   SQL Server, Redis, Azure Service Bus, MassTransit, RabbitMQ,
                   Entity Framework, EventStore
                 </p>
               </div>
-              <div className="bg-secondary p-6 rounded-lg shadow-custom-sm border border-light hover:shadow-custom-md transition-all duration-200">
+              <div className="bg-secondary p-6 rounded-lg shadow-custom-sm border border-light">
                 <h3 className="font-semibold text-primary mb-3 text-lg">
                   Frontend & Testing
                 </h3>
-                <p className="text-secondary text-sm leading-relaxed">
+                <p className="text-secondary leading-relaxed">
                   React.js, TypeScript, Redux, TDD, NUnit, Cypress, Performance
                   Testing, Test-Driven Development
                 </p>
@@ -151,7 +145,7 @@ function App() {
                   through event-driven architecture and real-time availability
                   features.
                 </p>
-                <ul className="text-secondary text-sm space-y-2 list-disc list-inside">
+                <ul className="text-secondary space-y-2 list-disc list-outside pl-5">
                   <li>
                     Designed event-driven microservices using CQRS, .NET Core,
                     and Azure Service Bus
@@ -180,7 +174,7 @@ function App() {
                   optimized database operations, and implemented comprehensive
                   testing strategies across microservices architecture.
                 </p>
-                <ul className="text-secondary text-sm space-y-2 list-disc list-inside">
+                <ul className="text-secondary space-y-2 list-disc list-outside pl-5">
                   <li>
                     Migrated legacy systems to event-driven processing
                     applications
@@ -206,14 +200,12 @@ function App() {
         <footer className="text-center pt-12 mt-16 border-t border-primary">
           <p className="text-secondary">
             London, UK •{" "}
-            <a
+            <ExternalLink
               href="https://blog.diomidis.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:text-accent hover:underline transition-all duration-200"
+              className="text-accent underline underline-offset-4 hover:decoration-2 transition-colors duration-200"
             >
               Read my notes
-            </a>
+            </ExternalLink>
           </p>
         </footer>
       </div>

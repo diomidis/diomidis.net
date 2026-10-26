@@ -22,9 +22,9 @@ export const DarkModeToggle: React.FC<DarkModeToggleProps> = ({
         transition-all duration-200 ease-in-out
         group
       "
-      aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
-      aria-pressed={isDark}
       role="switch"
+      aria-checked={isDark}
+      aria-label="Dark mode"
     >
       {/* Sun Icon */}
       <svg
@@ -57,11 +57,6 @@ export const DarkModeToggle: React.FC<DarkModeToggleProps> = ({
           clipRule="evenodd"
         />
       </svg>
-
-      {/* Screen reader text */}
-      <span className="sr-only">
-        {isDark ? "Switch to light mode" : "Switch to dark mode"}
-      </span>
     </button>
   );
 };
