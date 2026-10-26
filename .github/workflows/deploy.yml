@@ -55,9 +55,6 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
-        with:
-          # Automatically inject base path in your Vite configuration file.
-          static_site_generator: vite
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Vite
