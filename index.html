@@ -10,25 +10,6 @@
     />
     <link rel="canonical" href="https://diomidis.net/" />
 
-    <!-- Apply the stored or system theme before first paint; mirrors useDarkMode -->
-    <script>
-      (function () {
-        try {
-          var stored = localStorage.getItem("darkMode");
-          var isDark =
-            stored !== null
-              ? JSON.parse(stored)
-              : window.matchMedia("(prefers-color-scheme: dark)").matches;
-          if (isDark) document.documentElement.classList.add("dark");
-        } catch (e) {}
-      })();
-    </script>
-
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.webmanifest" />
     <meta
       name="theme-color"
       content="#f9fafb"
@@ -39,6 +20,32 @@
       content="#111827"
       media="(prefers-color-scheme: dark)"
     />
+
+    <!-- Apply the stored or system theme before first paint; mirrors useDarkMode -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("darkMode");
+          var isDark =
+            stored !== null
+              ? JSON.parse(stored)
+              : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (isDark) document.documentElement.classList.add("dark");
+          var themeColor = isDark ? "#111827" : "#f9fafb";
+          document
+            .querySelectorAll('meta[name="theme-color"]')
+            .forEach(function (meta) {
+              meta.setAttribute("content", themeColor);
+            });
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://diomidis.net/" />

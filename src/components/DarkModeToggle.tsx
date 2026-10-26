@@ -29,7 +29,7 @@ export const DarkModeToggle: React.FC<DarkModeToggleProps> = ({
       {/* Sun Icon */}
       <svg
         className={`
-          absolute w-6 h-6 text-yellow-500
+          absolute w-6 h-6 text-amber-700
           transition-all duration-300 ease-in-out
           ${isDark ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"}
         `}

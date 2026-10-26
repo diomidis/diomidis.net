@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+// Matches --color-bg-primary in index.css and the theme-color tags in index.html
+const THEME_COLORS = { light: "#f9fafb", dark: "#111827" };
+
 export const useDarkMode = () => {
   const [isDark, setIsDark] = useState<boolean>(() => {
     // Check localStorage first
@@ -13,16 +16,13 @@ export const useDarkMode = () => {
   });
 
   useEffect(() => {
-    const root = document.documentElement;
+    document.documentElement.classList.toggle("dark", isDark);
 
-    if (isDark) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-
-    // Store preference
-    localStorage.setItem("darkMode", JSON.stringify(isDark));
+    // Point both media variants at the active theme so the browser UI follows the toggle
+    const themeColor = isDark ? THEME_COLORS.dark : THEME_COLORS.light;
+    document
+      .querySelectorAll('meta[name="theme-color"]')
+      .forEach((meta) => meta.setAttribute("content", themeColor));
   }, [isDark]);
 
   // Listen for system preference changes
@@ -41,7 +41,12 @@ export const useDarkMode = () => {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  const toggle = () => setIsDark(!isDark);
+  // Only an explicit choice is stored, so visitors who never toggle keep following the OS
+  const toggle = () => {
+    const next = !isDark;
+    localStorage.setItem("darkMode", JSON.stringify(next));
+    setIsDark(next);
+  };
 
   return { isDark, toggle };
 };
