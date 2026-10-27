@@ -2,9 +2,74 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diomidis Anadiotis - Senior Software Engineer</title>
+    <meta
+      name="description"
+      content="Senior Software Engineer in London, specialising in event-driven .NET microservices, CQRS and Azure."
+    />
+    <link rel="canonical" href="https://diomidis.net/" />
+
+    <meta
+      name="theme-color"
+      content="#f9fafb"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#111827"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!-- Apply the stored or system theme before first paint; mirrors useDarkMode -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("darkMode");
+          var isDark =
+            stored !== null
+              ? JSON.parse(stored)
+              : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (isDark) document.documentElement.classList.add("dark");
+          var themeColor = isDark ? "#111827" : "#f9fafb";
+          document
+            .querySelectorAll('meta[name="theme-color"]')
+            .forEach(function (meta) {
+              meta.setAttribute("content", themeColor);
+            });
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://diomidis.net/" />
+    <meta
+      property="og:title"
+      content="Diomidis Anadiotis - Senior Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Senior Software Engineer in London, specialising in event-driven .NET microservices, CQRS and Azure."
+    />
+    <meta
+      property="og:image"
+      content="https://diomidis.net/android-chrome-512x512.png"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Diomidis Anadiotis - Senior Software Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Senior Software Engineer in London, specialising in event-driven .NET microservices, CQRS and Azure."
+    />
   </head>
   <body>
     <div id="root"></div>
