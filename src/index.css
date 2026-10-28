@@ -1,4 +1,12 @@
 @import "tailwindcss";
+@import "@fontsource-variable/schibsted-grotesk";
+
+@theme {
+  --font-sans: "Schibsted Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Drive dark: utilities from the .dark class set by the toggle, not the OS setting */
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* CSS Variables for theming */
 :root {
