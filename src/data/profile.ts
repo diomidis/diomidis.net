@@ -2,7 +2,6 @@
 // CV content follows cv_diomidis_anadiotis_2025_v1.tex. Phone number and postcode are left out on purpose.
 
 export const links = {
-  notes: 'https://blog.diomidis.net',
   github: 'https://github.com/diomidis',
   linkedin: 'https://www.linkedin.com/in/diomidis-anadiotis/',
   email: 'mailto:info@diomidis.net',
@@ -12,36 +11,11 @@ export const location = 'London, UK'
 
 // Home page
 
-export const intro =
-  'I build event-driven systems on .NET and Azure, and I move legacy software onto them without taking customers offline.'
+export const intro = 'I turn messy business problems into working software.'
 
-export const currently =
-  'I’m a senior software engineer at Arnold Clark, working remotely from London. I started there in 2017 as a systems analyst.'
-
-export const selectedWork: { name: string; description: string; tags: string; href?: string }[] = [
-  {
-    name: 'Booking platform',
-    description: 'co-led the rebuild of the customer journey',
-    tags: '.NET · React',
-  },
-  {
-    name: 'Real-time availability',
-    description: 'owned the feature that shows live appointment slots',
-    tags: 'CQRS · Redis',
-  },
-  {
-    name: 'Event processing pipeline',
-    description: 'proposed and built a replacement for legacy database jobs',
-    tags: 'MassTransit · Hangfire',
-  },
-]
-
-export const interests = ['Event-driven architecture', 'CQRS and event sourcing', 'Modernising legacy systems', 'Test-first development']
-
-export const notes = [
-  { title: 'London: dining and drinking', href: 'https://blog.diomidis.net/Goals/Experiences/London---Dining--and--Drinking' },
-  { title: 'Gigs in the UK', href: 'https://blog.diomidis.net/Goals/Experiences/Gigs---UK' },
-  { title: 'Japan', href: 'https://blog.diomidis.net/Goals/Trips/Japan' },
+export const about = [
+  'I’m a senior software engineer in London. I’m part of the team behind online booking and real-time availability for automotive aftersales, and I work directly with product, UX and business teams.',
+  'I like working close to the people who have the problem, and I’m increasingly interested in what data and AI can do for large retail and financial services businesses.',
 ]
 
 // CV page
@@ -122,14 +96,12 @@ export const experience: Employer[] = [
   },
 ]
 
-// The research was published under Dr Kyritsis's name, so the entry credits him and links to his work
+// The research was published under Dr Kyritsis's name, so the entry credits him and cites the paper
 export const research = {
   title: 'Research Assistant in Cognitive Computing',
   institution: 'City Unity College',
   location: 'Athens, Greece',
   period: 'Jan 2015 – Sep 2015',
-  lead: 'Dr Markos Kyritsis',
-  leadHref: 'https://scholar.google.com/citations?hl=en&user=QUT52bQAAAAJ&view_op=list_works&sortby=pubdate',
   highlights: [
     'Assisted Dr Markos Kyritsis, senior researcher and lecturer, with research into how people solve the Euclidean travelling salesperson problem.',
     'Developed the research software, using an EyeTribe eye tracker to capture cognitive processes in real time.',

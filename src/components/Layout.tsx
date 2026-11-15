@@ -10,7 +10,6 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ current, children }) => {
   const { isDark, toggle } = useDarkMode()
-  const navLink = 'text-secondary hover:text-primary px-1 py-2'
 
   return (
     <div className="min-h-screen bg-primary">
@@ -19,34 +18,20 @@ export const Layout: React.FC<LayoutProps> = ({ current, children }) => {
           <a href="/" className="font-semibold text-primary py-2" aria-current={current === 'home' ? 'page' : undefined}>
             Diomidis Anadiotis
           </a>
-          <nav className="flex items-center gap-3 text-sm" aria-label="Site">
-            <a href={links.notes} target="_blank" rel="noopener noreferrer" className={navLink}>
-              Notes<NewTab />
-            </a>
-            <a
-              href="/cv/"
-              className={current === 'cv' ? 'text-primary px-1 py-2 underline underline-offset-4' : navLink}
-              aria-current={current === 'cv' ? 'page' : undefined}
-            >
-              CV
-            </a>
-            <DarkModeToggle isDark={isDark} onToggle={toggle} />
-          </nav>
+          <DarkModeToggle isDark={isDark} onToggle={toggle} />
         </header>
 
         <main>{children}</main>
 
-        <footer className="mt-20 pt-6 border-t border-light text-sm text-muted flex flex-wrap gap-x-4 gap-y-2">
-          <span>{location}</span>
-          {/* The home intro already shows these links */}
-          {current !== 'home' && (
-            <>
-              <a href={links.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary">GitHub<NewTab /></a>
-              <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-primary">LinkedIn<NewTab /></a>
-              <a href={links.email} className="hover:text-primary">Email</a>
-            </>
-          )}
-        </footer>
+        {/* The home intro already shows these links, so it has no footer */}
+        {current !== 'home' && (
+          <footer className="mt-20 pt-6 border-t border-light text-sm text-muted flex flex-wrap gap-x-4 gap-y-2">
+            <span>{location}</span>
+            <a href={links.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary">GitHub<NewTab /></a>
+            <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-primary">LinkedIn<NewTab /></a>
+            <a href={links.email} className="hover:text-primary">Email</a>
+          </footer>
+        )}
       </div>
     </div>
   )

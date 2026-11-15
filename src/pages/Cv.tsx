@@ -67,7 +67,7 @@ export function Cv() {
             ))}
           </ul>
           <p className="text-sm text-muted mb-1">Published as</p>
-          <p className="text-sm text-secondary mb-3">
+          <p className="text-sm text-secondary">
             {research.publication.authors} ({research.publication.year}).{' '}
             <cite className="not-italic text-primary">{research.publication.title}</cite>.{' '}
             <i>{research.publication.venue}</i>.{' '}
@@ -80,9 +80,6 @@ export function Cv() {
               doi:{research.publication.doi}<NewTab />
             </a>
           </p>
-          <a href={research.leadHref} target="_blank" rel="noopener noreferrer" className="inline-block py-2 text-sm text-accent hover:underline">
-            Publications by {research.lead}<NewTab />
-          </a>
         </article>
       </section>
 
