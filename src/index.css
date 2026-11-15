@@ -1,9 +1,12 @@
 @import "tailwindcss";
+@import "@fontsource-variable/schibsted-grotesk";
 
-/* Make dark: variants follow the .dark class set by the toggle, not the OS setting */
+/* Drive dark: utilities from the .dark class set by the toggle, not the OS setting */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --font-sans: "Schibsted Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+
   /*
    * Comfortable line length (~65-75 characters) for max-w-measure. Uses em, not ch:
    * the system font's wide "0" makes 65ch run to almost 90 characters.

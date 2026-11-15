@@ -14,9 +14,9 @@ export const DarkModeToggle: React.FC<DarkModeToggleProps> = ({
       onClick={onToggle}
       className="
         relative inline-flex items-center justify-center
-        w-12 h-12 rounded-full
-        bg-gray-200 dark:bg-gray-700
-        hover:bg-gray-300 dark:hover:bg-gray-600
+        w-9 h-9 rounded-full
+        text-secondary
+        hover:bg-gray-200 dark:hover:bg-gray-700
         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
         dark:focus:ring-offset-gray-900
         transition-all duration-200 ease-in-out
@@ -29,7 +29,7 @@ export const DarkModeToggle: React.FC<DarkModeToggleProps> = ({
       {/* Sun Icon */}
       <svg
         className={`
-          absolute w-6 h-6 text-amber-700
+          absolute w-5 h-5
           transition-all duration-300 ease-in-out
           ${isDark ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"}
         `}
@@ -43,7 +43,7 @@ export const DarkModeToggle: React.FC<DarkModeToggleProps> = ({
       {/* Moon Icon */}
       <svg
         className={`
-          absolute w-6 h-6 text-blue-400
+          absolute w-5 h-5
           transition-all duration-300 ease-in-out
           ${isDark ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"}
         `}
