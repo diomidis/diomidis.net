@@ -6,24 +6,52 @@
     <title>CV - Diomidis Anadiotis</title>
     <meta name="description" content="Experience and skills of Diomidis Anadiotis, a London-based senior software engineer building event-driven .NET microservices on Azure." />
     <link rel="canonical" href="https://diomidis.net/cv/" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='42' font-family='system-ui,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23fff'%3EDA%3C/text%3E%3C/svg%3E" />
 
-    <!-- Open Graph / social previews -->
+    <meta
+      name="theme-color"
+      content="#f9fafb"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#111827"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!-- Apply the stored or system theme before first paint; mirrors useDarkMode -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("darkMode");
+          var isDark =
+            stored !== null
+              ? JSON.parse(stored)
+              : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (isDark) document.documentElement.classList.add("dark");
+          var themeColor = isDark ? "#111827" : "#f9fafb";
+          document
+            .querySelectorAll('meta[name="theme-color"]')
+            .forEach(function (meta) {
+              meta.setAttribute("content", themeColor);
+            });
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://diomidis.net/cv/" />
     <meta property="og:title" content="CV - Diomidis Anadiotis" />
-    <meta property="og:description" content="Experience and skills: event-driven .NET microservices, CQRS and Azure." />
+    <meta property="og:description" content="Experience and skills of Diomidis Anadiotis, a London-based senior software engineer building event-driven .NET microservices on Azure." />
+    <meta property="og:image" content="https://diomidis.net/android-chrome-512x512.png" />
     <meta name="twitter:card" content="summary" />
-
-    <!-- Apply the saved or system theme before first paint to avoid a light-theme flash -->
-    <script>
-      try {
-        const stored = localStorage.getItem('darkMode');
-        if (stored === 'true' || (stored === null && matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark');
-        }
-      } catch {}
-    </script>
+    <meta name="twitter:title" content="CV - Diomidis Anadiotis" />
+    <meta name="twitter:description" content="Experience and skills of Diomidis Anadiotis, a London-based senior software engineer building event-driven .NET microservices on Azure." />
   </head>
   <body>
     <div id="root"></div>
