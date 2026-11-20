@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" viewBox="0 0 512 512">
+  <title>Diomidis Anadiotis</title>
+  <rect width="512" height="512" fill="#1E3A5F"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="28" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M123 170 H173 A86 86 0 0 1 173 342 H123 Z"/>
+    <path d="M269 342 L329 170 L389 342"/>
+    <path d="M289 286 H369"/>
+  </g>
+</svg>
